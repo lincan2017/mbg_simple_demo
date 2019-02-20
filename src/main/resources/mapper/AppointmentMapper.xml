@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="test.mapper.BookMapper">
-  <resultMap id="BaseResultMap" type="test.pojo.Book">
+<mapper namespace="test.mapper.AppointmentMapper">
+  <resultMap id="BaseResultMap" type="test.pojo.Appointment">
     <id column="book_id" jdbcType="BIGINT" property="bookId" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="number" jdbcType="INTEGER" property="number" />
+    <id column="student_id" jdbcType="BIGINT" property="studentId" />
+    <result column="appoint_time" jdbcType="TIMESTAMP" property="appointTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,15 +65,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    book_id, name, number
+    book_id, student_id, appoint_time
   </sql>
-  <select id="selectByExample" parameterType="test.pojo.BookExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="test.dto.AppointmentExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from book
+    from appointment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -81,70 +81,72 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="test.pojo.AppointmentKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from book
+    from appointment
     where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from book
+  <delete id="deleteByPrimaryKey" parameterType="test.pojo.AppointmentKey">
+    delete from appointment
     where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="test.pojo.BookExample">
-    delete from book
+  <delete id="deleteByExample" parameterType="test.dto.AppointmentExample">
+    delete from appointment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="test.pojo.Book">
-    insert into book (book_id, name, number
+  <insert id="insert" parameterType="test.pojo.Appointment">
+    insert into appointment (book_id, student_id, appoint_time
       )
-    values (#{bookId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}
+    values (#{bookId,jdbcType=BIGINT}, #{studentId,jdbcType=BIGINT}, #{appointTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="test.pojo.Book">
-    insert into book
+  <insert id="insertSelective" parameterType="test.pojo.Appointment">
+    insert into appointment
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="bookId != null">
         book_id,
       </if>
-      <if test="name != null">
-        name,
+      <if test="studentId != null">
+        student_id,
       </if>
-      <if test="number != null">
-        number,
+      <if test="appointTime != null">
+        appoint_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="bookId != null">
         #{bookId,jdbcType=BIGINT},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="studentId != null">
+        #{studentId,jdbcType=BIGINT},
       </if>
-      <if test="number != null">
-        #{number,jdbcType=INTEGER},
+      <if test="appointTime != null">
+        #{appointTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="test.pojo.BookExample" resultType="java.lang.Long">
-    select count(*) from book
+  <select id="countByExample" parameterType="test.dto.AppointmentExample" resultType="java.lang.Long">
+    select count(*) from appointment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update book
+    update appointment
     <set>
       <if test="record.bookId != null">
         book_id = #{record.bookId,jdbcType=BIGINT},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
+      <if test="record.studentId != null">
+        student_id = #{record.studentId,jdbcType=BIGINT},
       </if>
-      <if test="record.number != null">
-        number = #{record.number,jdbcType=INTEGER},
+      <if test="record.appointTime != null">
+        appoint_time = #{record.appointTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -152,30 +154,28 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update book
+    update appointment
     set book_id = #{record.bookId,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      number = #{record.number,jdbcType=INTEGER}
+      student_id = #{record.studentId,jdbcType=BIGINT},
+      appoint_time = #{record.appointTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="test.pojo.Book">
-    update book
+  <update id="updateByPrimaryKeySelective" parameterType="test.pojo.Appointment">
+    update appointment
     <set>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="number != null">
-        number = #{number,jdbcType=INTEGER},
+      <if test="appointTime != null">
+        appoint_time = #{appointTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="test.pojo.Book">
-    update book
-    set name = #{name,jdbcType=VARCHAR},
-      number = #{number,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="test.pojo.Appointment">
+    update appointment
+    set appoint_time = #{appointTime,jdbcType=TIMESTAMP}
     where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
   </update>
 </mapper>

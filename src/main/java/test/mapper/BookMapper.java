@@ -3,7 +3,7 @@ package test.mapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import test.pojo.Book;
-import test.pojo.BookExample;
+import test.dto.BookExample;
 
 public interface BookMapper {
     long countByExample(BookExample example);
