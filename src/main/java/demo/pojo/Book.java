@@ -1,4 +1,4 @@
-package test.pojo;
+package demo.pojo;
 
 public class Book {
     private Long bookId;

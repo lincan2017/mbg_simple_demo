@@ -4,8 +4,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Assert;
 import org.junit.Test;
-import test.dto.BookExample;
-import test.mapper.BookMapper;
+import demo.dto.BookExample;
+import demo.mapper.BookMapper;
 import util.MyBatisUtil;
 
 /**

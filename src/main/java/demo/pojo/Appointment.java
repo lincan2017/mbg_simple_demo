@@ -1,6 +1,4 @@
-package test.pojo;
-
-import test.pojo.AppointmentKey;
+package demo.pojo;
 
 import java.util.Date;
 

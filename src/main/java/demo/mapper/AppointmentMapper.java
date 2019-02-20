@@ -1,10 +1,10 @@
-package test.mapper;
+package demo.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import test.pojo.Appointment;
-import test.dto.AppointmentExample;
-import test.pojo.AppointmentKey;
+import demo.pojo.Appointment;
+import demo.dto.AppointmentExample;
+import demo.pojo.AppointmentKey;
 
 public interface AppointmentMapper {
     long countByExample(AppointmentExample example);

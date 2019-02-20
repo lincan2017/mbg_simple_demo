@@ -17,7 +17,7 @@
     </settings>
 
     <typeAliases>
-        <package name="test.mapper"></package>
+        <package name="demo.mapper"></package>
     </typeAliases>
 
     <environments default="development">

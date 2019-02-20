@@ -1,9 +1,9 @@
-package test.mapper;
+package demo.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import test.pojo.Book;
-import test.dto.BookExample;
+import demo.pojo.Book;
+import demo.dto.BookExample;
 
 public interface BookMapper {
     long countByExample(BookExample example);

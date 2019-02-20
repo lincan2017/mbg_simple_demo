@@ -1,17 +1,16 @@
-package test.dto;
+package demo.dto;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class AppointmentExample {
+public class BookExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public AppointmentExample() {
+    public BookExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -165,123 +164,133 @@ public class AppointmentExample {
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdIsNull() {
-            addCriterion("student_id is null");
+        public Criteria andNameIsNull() {
+            addCriterion("name is null");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdIsNotNull() {
-            addCriterion("student_id is not null");
+        public Criteria andNameIsNotNull() {
+            addCriterion("name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdEqualTo(Long value) {
-            addCriterion("student_id =", value, "studentId");
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("name =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdNotEqualTo(Long value) {
-            addCriterion("student_id <>", value, "studentId");
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("name <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdGreaterThan(Long value) {
-            addCriterion("student_id >", value, "studentId");
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("name >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("student_id >=", value, "studentId");
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdLessThan(Long value) {
-            addCriterion("student_id <", value, "studentId");
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdLessThanOrEqualTo(Long value) {
-            addCriterion("student_id <=", value, "studentId");
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("name <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdIn(List<Long> values) {
-            addCriterion("student_id in", values, "studentId");
+        public Criteria andNameLike(String value) {
+            addCriterion("name like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdNotIn(List<Long> values) {
-            addCriterion("student_id not in", values, "studentId");
+        public Criteria andNameNotLike(String value) {
+            addCriterion("name not like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdBetween(Long value1, Long value2) {
-            addCriterion("student_id between", value1, value2, "studentId");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andStudentIdNotBetween(Long value1, Long value2) {
-            addCriterion("student_id not between", value1, value2, "studentId");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeIsNull() {
-            addCriterion("appoint_time is null");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeIsNotNull() {
-            addCriterion("appoint_time is not null");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeEqualTo(Date value) {
-            addCriterion("appoint_time =", value, "appointTime");
+        public Criteria andNumberIsNull() {
+            addCriterion("number is null");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeNotEqualTo(Date value) {
-            addCriterion("appoint_time <>", value, "appointTime");
+        public Criteria andNumberIsNotNull() {
+            addCriterion("number is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeGreaterThan(Date value) {
-            addCriterion("appoint_time >", value, "appointTime");
+        public Criteria andNumberEqualTo(Integer value) {
+            addCriterion("number =", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("appoint_time >=", value, "appointTime");
+        public Criteria andNumberNotEqualTo(Integer value) {
+            addCriterion("number <>", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeLessThan(Date value) {
-            addCriterion("appoint_time <", value, "appointTime");
+        public Criteria andNumberGreaterThan(Integer value) {
+            addCriterion("number >", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeLessThanOrEqualTo(Date value) {
-            addCriterion("appoint_time <=", value, "appointTime");
+        public Criteria andNumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("number >=", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeIn(List<Date> values) {
-            addCriterion("appoint_time in", values, "appointTime");
+        public Criteria andNumberLessThan(Integer value) {
+            addCriterion("number <", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeNotIn(List<Date> values) {
-            addCriterion("appoint_time not in", values, "appointTime");
+        public Criteria andNumberLessThanOrEqualTo(Integer value) {
+            addCriterion("number <=", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeBetween(Date value1, Date value2) {
-            addCriterion("appoint_time between", value1, value2, "appointTime");
+        public Criteria andNumberIn(List<Integer> values) {
+            addCriterion("number in", values, "number");
             return (Criteria) this;
         }
 
-        public Criteria andAppointTimeNotBetween(Date value1, Date value2) {
-            addCriterion("appoint_time not between", value1, value2, "appointTime");
+        public Criteria andNumberNotIn(List<Integer> values) {
+            addCriterion("number not in", values, "number");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberBetween(Integer value1, Integer value2) {
+            addCriterion("number between", value1, value2, "number");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("number not between", value1, value2, "number");
             return (Criteria) this;
         }
     }
